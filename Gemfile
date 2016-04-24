@@ -9,12 +9,18 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
+gem 'momentjs-rails'
+
+# It's a small library to provide the Rails I18n translations on the JavaScript.
+gem "i18n-js", ">= 3.0.0.rc11"
+
 gem 'jbuilder', '~> 2.0'
 
 gem 'httparty', require: false
 
 gem 'haml'
 source 'https://rails-assets.tenex.tech' do
+  gem 'bootstrap-datepicker-rails'
   gem 'rails-assets-bootstrap'
 end
 

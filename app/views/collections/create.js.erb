@@ -1,0 +1,10 @@
+if (<%= @collection.errors.count > 0 %>) {
+  $("#new_collection .alert.alert-danger").html('').removeClass('hidden');
+  <% @collection.errors.full_messages.each do |message| %>
+    $("#new_collection .alert.alert-danger").append("<%= message %>");
+  <% end %>
+} else {
+  $("#new_collection .alert.alert-danger").html('').addClass('hidden');
+  $("#collections-list").prepend("<%= escape_javascript(render(@collection)) %>");
+  $("#new_collection input[type=text]").val('');
+}

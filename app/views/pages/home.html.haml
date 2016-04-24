@@ -1,0 +1,8 @@
+%h1
+  = image_tag 'logo.jpg', size: '45'
+  = t('home_title')
+
+= render 'collections/new'
+
+#collections-list
+  = render @collections

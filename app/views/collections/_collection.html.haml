@@ -1,0 +1,12 @@
+.collection.well.well-sm{id: dom_id(collection)}
+  %h4= collection.hashtag
+  %strong
+    = t('from')
+    = collection.start_date.strftime("%d %b %Y")
+    = t('to').downcase
+    = collection.end_date.strftime("%d %b %Y")
+  
+  .pull-right
+    = link_to t('view_collection_link_label'), '#', class: 'btn btn-lg btn-success'
+
+  .clearfix

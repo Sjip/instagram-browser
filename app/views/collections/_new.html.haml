@@ -1,0 +1,10 @@
+= form_for @collection, remote: true, html: {class: 'form-inline'} do |f|
+  .alert.alert-danger.hidden
+  .form-group
+    = f.text_field :hashtag, class: 'form-control', placeholder: '#hashtag'
+  .form-group
+    = render 'shared/datepicker_input', name: 'start_date', f: f, placeholder: t('placeholder_start_date_collection')
+  .form-group
+    = render 'shared/datepicker_input', name: 'end_date', f: f, placeholder: t('placeholder_end_date_collection')
+  .form-group
+    = f.submit t('submit_tag_collection'), class: 'btn btn-primary'
