@@ -8,6 +8,7 @@
 #  end_date   :date
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  next_url   :string
 #
 
 require 'test_helper'

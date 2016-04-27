@@ -27,6 +27,7 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
+  gem 'dotenv-rails'
 end
 
 group :development do

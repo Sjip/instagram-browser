@@ -1,6 +1,7 @@
 en:
   home_title: "Instagram Collection"
   submit_tag_collection: "Create collection"
+  placeholder_hashtag_collection: 'hashtag'
   placeholder_end_date_collection: "choose an end date"
   placeholder_start_date_collection: "choose a start date"
   start_date_greater_than_end_date: "Start date is greater than end date"

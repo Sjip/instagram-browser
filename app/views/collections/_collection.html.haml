@@ -7,6 +7,8 @@
     = collection.end_date.strftime("%d %b %Y")
   
   .pull-right
-    = link_to t('view_collection_link_label'), '#', class: 'btn btn-lg btn-success'
+    = link_to t('view_collection_link_label'), collection_path(collection), remote: true, class: 'btn btn-lg btn-success'
 
   .clearfix
+
+  .media-gallery

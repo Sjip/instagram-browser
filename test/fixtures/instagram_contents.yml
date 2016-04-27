@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: instagram_contents
+#
+#  id            :integer          not null, primary key
+#  created_time  :datetime
+#  caption_text  :text
+#  media_url     :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  collection_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  created_time: 2016-04-26 20:59:57
+  caption_text: MyText
+  media_url: MyString
+
+two:
+  created_time: 2016-04-26 20:59:57
+  caption_text: MyText
+  media_url: MyString

@@ -1,7 +1,7 @@
 = form_for @collection, remote: true, html: {class: 'form-inline'} do |f|
   .alert.alert-danger.hidden
   .form-group
-    = f.text_field :hashtag, class: 'form-control', placeholder: '#hashtag'
+    = f.text_field :hashtag, class: 'form-control', placeholder: t('placeholder_hashtag_collection')
   .form-group
     = render 'shared/datepicker_input', name: 'start_date', f: f, placeholder: t('placeholder_start_date_collection')
   .form-group
