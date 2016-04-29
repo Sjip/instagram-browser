@@ -15,4 +15,4 @@ You're ready !
 
 `rake test`
 
-Deployed on : 
+Deployed on : https://fast-garden-26894.herokuapp.com/
