@@ -20,10 +20,10 @@ gem "i18n-js", ">= 3.0.0.rc11"
 gem 'jbuilder', '~> 2.0'
 
 gem 'httparty', require: false
-
+gem 'bootstrap-datepicker-rails'
 gem 'haml'
+
 source 'https://rails-assets.tenex.tech' do
-  gem 'bootstrap-datepicker-rails'
   gem 'rails-assets-bootstrap'
 end
 

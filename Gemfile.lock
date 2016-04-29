@@ -185,7 +185,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-datepicker-rails!
+  bootstrap-datepicker-rails
   byebug
   coffee-rails (~> 4.1.0)
   compass-rails!
