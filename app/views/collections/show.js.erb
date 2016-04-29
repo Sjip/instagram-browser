@@ -1,1 +1,3 @@
-$('#collection_<%= @collection.id %> .media-gallery').html("<%= escape_javascript(render(@instagram_contents)) %>")
+$('#collection_<%= @collection.id %> .media-gallery').html("<%= escape_javascript(render partial: 'instagram_contents/instagram_content', collection: @instagram_contents) %>");
+$('#collection_<%= @collection.id %> .media-gallery').append("<div class='clearfix'></div>");
+$('#collection_<%= @collection.id %> .pagination').html("<%= escape_javascript(paginate(@instagram_contents, remote: true)) %>")

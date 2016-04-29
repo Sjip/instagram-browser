@@ -9,6 +9,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  collection_id :integer
+#  media_type    :string
 #
 
 require 'test_helper'

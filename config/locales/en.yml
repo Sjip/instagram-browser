@@ -10,3 +10,5 @@ en:
   from: "From"
   to: "To"
   view_collection_link_label: "View collection"
+  browser_doesnt_support_video: "Your browser does not support the video tag."
+  next_page_button_label: 'Add a new page'

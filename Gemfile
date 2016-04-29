@@ -11,6 +11,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'momentjs-rails'
 
+# Pagination
+gem 'kaminari'
+
 # It's a small library to provide the Rails I18n translations on the JavaScript.
 gem "i18n-js", ">= 3.0.0.rc11"
 

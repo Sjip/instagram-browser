@@ -11,4 +11,9 @@
 
   .clearfix
 
+  .pagination
+
+  .pull-right
+    = link_to t('next_page_button_label'), collection_path(collection, new_data: true), remote: true, class: 'btn btn btn-primary'
+
   .media-gallery

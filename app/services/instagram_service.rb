@@ -12,9 +12,9 @@ class InstagramService
     prepare_recent_tagged_media_data(json_response, collection)
   end
 
-  def get_next_recent_tagged_media(json_response, collection)
-    if json_response["pagination"]["next_url"].present?
-      next_data = get_next_data(json_response["pagination"]["next_url"])
+  def get_next_recent_tagged_media(collection)
+    if collection.next_url
+      next_data = get_next_data(collection.next_url)
       return prepare_recent_tagged_media_data(next_data, collection) if next_data.present?
     end
     nil
@@ -33,6 +33,13 @@ class InstagramService
     json_response["data"].each do |data|
       if data["created_time"].to_i >= collection.start_date_unix && data["created_time"].to_i <= collection.end_date_unix
         raw_media << data
+      elsif data["comments"]["count"] > 0
+        data["comments"]["data"].each do |comment|
+          if comment["text"].include?(collection.hashtag)
+            data['created_time'] = comment['created_time']
+            raw_media << data
+          end
+        end
       end
     end
 
@@ -47,7 +54,8 @@ class InstagramService
         media << {
           created_time: DateTime.strptime(data['caption']['created_time'],'%s'),
           caption_text: data['caption']['text'],
-          media_url:    data['type'] == 'image' ? data['images']['thumbnail']['url'] : data['videos']['standard_resolution']['url']
+          media_url:    data['type'] == 'image' ? data['images']['thumbnail']['url'] : data['videos']['standard_resolution']['url'],
+          media_type:   data['type']
         }
       end
     end

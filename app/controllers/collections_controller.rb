@@ -1,9 +1,22 @@
 class CollectionsController < ApplicationController
   def show
     if params[:id]
-      @collection = Collection.find_by_id(params[:id].to_i)
-      InstagramService.new.get_recent_tagged_media(@collection) if @collection.instagram_contents.blank?
-      @instagram_contents = @collection.instagram_contents
+      id = params[:id].to_i
+      @collection = Collection.find_by_id(id)
+
+      if params[:new_data] == 'true'
+        InstagramService.new.get_next_recent_tagged_media(@collection)
+      elsif @collection.instagram_contents.blank?
+        InstagramService.new.get_recent_tagged_media(@collection) 
+      end
+      
+      @instagram_contents = Collection.find_by_id(id).instagram_contents.order('id asc').page params[:page]
+
+      if params[:new_data] == 'true'
+        last_page = @instagram_contents.num_pages
+        @instagram_contents = Collection.find_by_id(id).instagram_contents.order('id asc').page last_page
+        params[:new_data] = 'false'
+      end
 
       respond_to do |format|
         format.js

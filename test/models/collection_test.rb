@@ -4,8 +4,8 @@
 #
 #  id         :integer          not null, primary key
 #  hashtag    :string
-#  start_date :date
-#  end_date   :date
+#  start_date :datetime
+#  end_date   :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  next_url   :string
