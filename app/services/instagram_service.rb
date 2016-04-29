@@ -36,7 +36,10 @@ class InstagramService
       elsif data["comments"]["count"] > 0
         data["comments"]["data"].each do |comment|
           if comment["text"].include?(collection.hashtag)
-            data['created_time'] = comment['created_time']
+            if data['caption'].nil?
+              data['caption'] = {}
+            end
+            data['caption']['created_time'] = comment['created_time']
             raw_media << data
           end
         end
@@ -52,7 +55,7 @@ class InstagramService
     if raw_media.size > 0
       raw_media.each do |data|
         media << {
-          created_time: DateTime.strptime(data['caption']['created_time'],'%s'),
+          created_time: DateTime.strptime(data['caption']['created_time'], '%s'),
           caption_text: data['caption']['text'],
           media_url:    data['type'] == 'image' ? data['images']['thumbnail']['url'] : data['videos']['standard_resolution']['url'],
           media_type:   data['type'],
