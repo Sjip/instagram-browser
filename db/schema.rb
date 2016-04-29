@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429005022) do
+ActiveRecord::Schema.define(version: 20160429022145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20160429005022) do
     t.datetime "updated_at",    null: false
     t.integer  "collection_id"
     t.string   "media_type"
+    t.string   "username"
+    t.string   "insta_link"
   end
 
   add_index "instagram_contents", ["collection_id"], name: "index_instagram_contents_on_collection_id", using: :btree

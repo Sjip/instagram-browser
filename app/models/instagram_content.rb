@@ -10,13 +10,15 @@
 #  updated_at    :datetime         not null
 #  collection_id :integer
 #  media_type    :string
+#  username      :string
+#  insta_link    :string
 #
 
 class InstagramContent < ActiveRecord::Base
   paginates_per 20
 
-  validates :created_time, :caption_text, :media_url, :media_type, presence: true
-  validates :caption_text, uniqueness: { scope: [:created_time, :media_url, :media_type] }
+  validates :created_time, :caption_text, :media_url, :media_type, :username, :insta_link, presence: true
+  validates :caption_text, uniqueness: { scope: [:created_time, :media_url, :media_type, :username, :insta_link] }
   validates :media_type, inclusion: { in: ['image', 'video'] }
 
   belongs_to :collection

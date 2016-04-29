@@ -10,6 +10,8 @@
 #  updated_at    :datetime         not null
 #  collection_id :integer
 #  media_type    :string
+#  username      :string
+#  insta_link    :string
 #
 
 require 'test_helper'

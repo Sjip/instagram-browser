@@ -55,7 +55,9 @@ class InstagramService
           created_time: DateTime.strptime(data['caption']['created_time'],'%s'),
           caption_text: data['caption']['text'],
           media_url:    data['type'] == 'image' ? data['images']['thumbnail']['url'] : data['videos']['standard_resolution']['url'],
-          media_type:   data['type']
+          media_type:   data['type'],
+          username:     data['user']['username'],
+          insta_link:   data['link']
         }
       end
     end

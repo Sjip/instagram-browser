@@ -1,12 +1,16 @@
 .instagram_content.pull-left{id: dom_id(instagram_content)}
-  %p.media
-    - if instagram_content.is_image?
-      = image_tag instagram_content.media_url
-    - elsif instagram_content.is_video?
-      %video{width: '200', height: '240', controls: true}
-        %source{src: instagram_content.media_url, type: 'video/mp4'}
-        = t('browser_doesnt_support_video')
+  = link_to instagram_content.insta_link, target: '_blank' do
+    %p.media
+      - if instagram_content.is_image?
+        = image_tag instagram_content.media_url
+      - elsif instagram_content.is_video?
+        %video{width: '200', height: '240', controls: true}
+          %source{src: instagram_content.media_url, type: 'video/mp4'}
+          = t('browser_doesnt_support_video')
   %p.created_time
     = instagram_content.created_time
+  %p.user
+    %strong
+      = "by #{instagram_content.username}"
   %p.caption_text
     = instagram_content.caption_text
