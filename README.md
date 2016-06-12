@@ -1,4 +1,4 @@
-Pixlee test by Léo Duquesnel
+Instagram Browser by Léo Duquesnel
 ==
 
 ## How to set up the project:
@@ -23,4 +23,4 @@ You can navigate through the content with the pagination (if more than 20 items)
 
 `rake test`
 
-Deployed on : https://fast-garden-26894.herokuapp.com/
+Demo on : https://fast-garden-26894.herokuapp.com/

@@ -1,11 +1,11 @@
 development:
   adapter: postgresql
-  database: pixlee_test_development
+  database: instagram_browser_development
   pool: 5
   timeout: 5000
 
 test:
   adapter: postgresql
-  database: pixlee_test_test
+  database: instagram_browser_test
   pool: 5
   timeout: 5000
